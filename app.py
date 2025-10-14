@@ -26,8 +26,8 @@ CONFIG = {
 }
 
 DEMO_IMAGE_PATHS = {
-    "Demo Image 1": "demo/Orginal.jpg",
-    "Demo Image 2": "demo/Extracted.jpg"
+    "Demo Image 1": "demo/orginal.jpg",
+    "Demo Image 2": "demo/extracted.jpg"
 }
 
 BG_IMAGE_PATHS = {
