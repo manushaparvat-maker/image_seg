@@ -25,6 +25,7 @@ CONFIG = {
     "fg_thresh": 0.3,
 }
 
+# Paths - Updated for deployment
 DEMO_IMAGE_PATHS = {
     "Demo Image 1": "demo/Orginal.jpg",
     "Demo Image 2": "demo/Extracted.jpg"
@@ -37,6 +38,7 @@ BG_IMAGE_PATHS = {
     "Background 4": "backgrounds/bg4.jpg",
 }
 
+# Crop Presets
 CROP_PRESETS = {
     "Freeform": None,
     "Square (1:1)": (1, 1),
@@ -48,6 +50,7 @@ CROP_PRESETS = {
     "Twitter Post (16:9)": (16, 9),
 }
 
+# Filter Presets
 FILTERS = {
     "None": lambda img: img,
     "Grayscale": lambda img: ImageEnhance.Color(img).enhance(0),
@@ -62,214 +65,112 @@ FILTERS = {
 }
 
 # ============================================================================
-# CUSTOM CSS - CULT CLASSIC PROFESSIONAL DESIGN
+# CUSTOM CSS - SIMPLIFIED PROFESSIONAL CLASSIC DESIGN
 # ============================================================================
 CUSTOM_CSS = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700&display=swap');
-
-* {
-    font-family: 'Raleway', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 .stApp {
-    background: linear-gradient(135deg, #0a0a0f 0%, #1a1625 25%, #2d1b4e 50%, #1a1625 75%, #0a0a0f 100%);
-    background-attachment: fixed;
-}
-
-.stApp::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(75, 0, 130, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
 }
 
 .main-header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1923 100%);
-    padding: 3.5rem 3rem;
-    border-radius: 25px;
+    background: linear-gradient(135deg, #e6e6fa 0%, #f5f5ff 100%);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 0 1px rgba(138, 43, 226, 0.3);
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(138, 43, 226, 0.2);
-}
-
-.main-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.1), transparent);
-    animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2.5rem;
+    border: 2px solid #d4af37;
 }
 
 .main-header h1 {
     margin: 0;
-    background: linear-gradient(135deg, #e6d5ff 0%, #b794f6 50%, #9f7aea 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 4rem;
+    color: #2c3e50;
+    font-size: 3.2rem;
     font-weight: 700;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 4px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 40px rgba(138, 43, 226, 0.5);
-    position: relative;
 }
 
 .main-header p {
-    margin: 1.2rem 0 0 0;
-    color: #c4b5fd;
-    font-size: 1.2rem;
-    font-weight: 400;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 1px;
-    opacity: 0.9;
+    margin: 1rem 0 0 0;
+    color: #34495e;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .stTabs [data-baseweb="tab-list"] {
-    gap: 12px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 1.5rem;
-    border-radius: 20px;
-    box-shadow: 
-        0 10px 40px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(138, 43, 226, 0.2);
+    gap: 10px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 1.2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .stTabs [data-baseweb="tab"] {
-    height: 65px;
-    background: linear-gradient(135deg, #2d1b4e 0%, #3d2659 100%);
-    color: #e6d5ff;
-    border-radius: 15px;
+    height: 60px;
+    background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
+    color: #1a1a2e;
+    border-radius: 12px;
     font-weight: 600;
-    font-size: 1.05rem;
-    padding: 0 2.5rem;
-    border: 1px solid rgba(138, 43, 226, 0.3);
-    font-family: 'Raleway', sans-serif;
-    box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
-    transition: all 0.4s ease;
-    letter-spacing: 0.5px;
+    font-size: 1rem;
+    padding: 0 2rem;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .stTabs [data-baseweb="tab"]:hover {
-    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
-    background: linear-gradient(135deg, #3d2659 0%, #4d3166 100%);
-    transform: translateY(-2px);
-    border-color: rgba(138, 43, 226, 0.5);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #e6c85c 0%, #d4af37 100%);
 }
 
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
-    color: #ffffff;
-    box-shadow: 
-        0 8px 35px rgba(124, 58, 237, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-color: rgba(167, 139, 250, 0.8);
+    background: linear-gradient(135deg, #8b7355 0%, #6d5d4b 100%);
+    color: #f5f5ff;
+    box-shadow: 0 6px 30px rgba(139, 115, 85, 0.6);
 }
 
 section[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0f0f1e 0%, #1a1a2e 50%, #0f0f1e 100%);
-    border-right: 1px solid rgba(138, 43, 226, 0.2);
-}
-
-section[data-testid="stSidebar"] * {
-    color: #d8b4fe !important;
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 50%, #1a1a2e 100%);
 }
 
 section[data-testid="stSidebar"] h3 {
-    color: #e9d5ff !important;
-    font-family: 'Cinzel', serif !important;
-    font-weight: 600 !important;
-    font-size: 1.3rem !important;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);
-}
-
-section[data-testid="stSidebar"] label {
-    color: #c4b5fd !important;
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 500 !important;
-}
-
-section[data-testid="stSidebar"] .stNumberInput input,
-section[data-testid="stSidebar"] .stSelectbox select,
-section[data-testid="stSidebar"] input[type="text"],
-section[data-testid="stSidebar"] textarea {
-    color: #1a1a2e !important;
-    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%) !important;
-    border: 2px solid rgba(138, 43, 226, 0.3) !important;
-    border-radius: 12px !important;
-    font-weight: 500 !important;
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
 }
 
 .stButton > button {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
-    color: #ffffff;
-    border: 1px solid rgba(167, 139, 250, 0.5);
-    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
+    color: #1a1a2e;
+    border: none;
+    padding: 0.7rem 1.8rem;
     font-weight: 700;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
-    box-shadow: 
-        0 6px 25px rgba(124, 58, 237, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transition: all 0.4s ease;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
 }
 
 .stButton > button:hover {
-    box-shadow: 
-        0 12px 40px rgba(124, 58, 237, 0.7),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
-    transform: translateY(-3px);
-    border-color: rgba(167, 139, 250, 0.8);
-}
-
-section[data-testid="stFileUploadDropzone"] {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
-    border: 3px dashed rgba(138, 43, 226, 0.5) !important;
-    border-radius: 25px !important;
-    padding: 3.5rem !important;
-    box-shadow: inset 0 0 30px rgba(138, 43, 226, 0.1) !important;
+    box-shadow: 0 10px 35px rgba(212, 175, 55, 0.6);
+    background: linear-gradient(135deg, #e6c85c 0%, #d4af37 100%);
 }
 
 .step-indicator {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 2.5rem 2rem;
-    border-radius: 25px;
-    margin: 2.5rem 0;
-    box-shadow: 
-        0 15px 50px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    background: linear-gradient(135deg, #e6e6fa 0%, #f5f5ff 100%);
+    padding: 2rem 1.5rem;
+    border-radius: 18px;
+    margin: 2rem 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    border: 2px solid #d4af37;
 }
 
 .step {
@@ -280,146 +181,67 @@ section[data-testid="stFileUploadDropzone"] {
 }
 
 .step-number {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #2d1b4e 0%, #3d2659 100%);
-    color: #e6d5ff;
+    background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
+    color: #1a1a2e;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    box-shadow: 
-        0 6px 25px rgba(138, 43, 226, 0.3),
-        inset 0 -2px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.5s ease;
-    border: 2px solid rgba(138, 43, 226, 0.4);
-    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
 }
 
 .step-number.active {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
-    color: #ffffff;
-    box-shadow: 
-        0 0 50px rgba(124, 58, 237, 0.8),
-        0 8px 30px rgba(124, 58, 237, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transform: scale(1.15);
-    border-color: rgba(167, 139, 250, 0.8);
+    background: linear-gradient(135deg, #8b7355 0%, #6d5d4b 100%);
+    color: #f5f5ff;
+    box-shadow: 0 0 40px rgba(139, 115, 85, 0.8);
+    transform: scale(1.2);
 }
 
 .step-label {
-    color: #c4b5fd;
+    color: #2c3e50;
     font-weight: 600;
-    font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 0.95rem;
 }
 
 .step-connector {
-    height: 5px;
-    background: linear-gradient(90deg, 
-        rgba(138, 43, 226, 0.3) 0%, 
-        rgba(167, 139, 250, 0.6) 50%, 
-        rgba(138, 43, 226, 0.3) 100%);
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37 0%, #8b7355 50%, #d4af37 100%);
     flex: 1;
-    margin: 0 1.5rem;
-    border-radius: 3px;
-    box-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);
+    margin: 0 1rem;
+    border-radius: 2px;
 }
 
 .footer-professional {
     text-align: center;
-    padding: 3rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1923 100%);
-    border-radius: 25px;
-    box-shadow: 
-        0 15px 60px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    margin-top: 3.5rem;
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #e6e6fa 0%, #f5f5ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.25);
+    margin-top: 3rem;
+    border: 2px solid #d4af37;
 }
 
 .footer-professional h3 {
-    background: linear-gradient(135deg, #e6d5ff 0%, #b794f6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-family: 'Cinzel', serif;
+    color: #2c3e50;
+    font-family: 'Playfair Display', serif;
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    letter-spacing: 2px;
 }
 
 .footer-professional p {
-    color: #c4b5fd;
-    margin-top: 0.8rem;
+    color: #34495e;
+    margin-top: 0.7rem;
     font-weight: 500;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
-
-h4, h5 {
-    color: #e9d5ff !important;
-    font-family: 'Cinzel', serif !important;
-    text-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);
-    letter-spacing: 1px;
 }
 
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
-
-::-webkit-scrollbar {
-    width: 14px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0a0a0f;
-    border-left: 1px solid rgba(138, 43, 226, 0.2);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #7c3aed 0%, #5b21b6 100%);
-    border-radius: 10px;
-    border: 2px solid #0a0a0f;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #8b5cf6 0%, #6d28d9 100%);
-}
-
-input, select, textarea {
-    transition: all 0.3s ease !important;
-}
-
-input:focus, select:focus, textarea:focus {
-    border-color: rgba(138, 43, 226, 0.6) !important;
-    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1) !important;
-}
-
-.stSlider {
-    padding: 1rem 0;
-}
-
-.stSlider [data-baseweb="slider"] {
-    background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%);
-    padding: 1rem;
-    border-radius: 15px;
-}
-
-p, span, div {
-    color: #c4b5fd;
-}
-
-.stCaption {
-    color: #a78bfa !important;
-    font-style: italic;
-}
 </style>
 """
 
@@ -805,7 +627,7 @@ def main():
     init_session_state()
 
     st.set_page_config(
-        page_title="OneView - Professional Image Editor",
+        page_title="OneView",
         page_icon="🔷",
         layout="wide",
         initial_sidebar_state="expanded"
@@ -927,7 +749,7 @@ def main():
             st.info("Demo image not available")
 
     with spacer:
-        st.markdown("<div style='height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #a78bfa;'>→</div>", unsafe_allow_html=True)
+        st.markdown("<div style='height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem;'>→</div>", unsafe_allow_html=True)
 
     with demo_col2:
         st.markdown("#### Extracted Subject")
@@ -1145,7 +967,7 @@ def main():
                 )
 
                 if comparison_mode == "Interactive Slider":
-                    st.markdown("<h4 style='text-align:center;'>🔄 Interactive Slider</h4>", unsafe_allow_html=True)
+                    st.markdown("<h4 style='text-align:center;'>🔄 Interactive Slider </h4>", unsafe_allow_html=True)
                     st.markdown("##### Move the zoom slider")
                     
                     original_img = Image.fromarray(st.session_state.original_image)
@@ -1289,7 +1111,7 @@ def main():
 
                 with export_col1:
                     get_download_button(result_pil, export_format, quality, "⬇️ Download Final",
-                                      f"oneview_result.{export_format.lower()}", "download_final")
+                                      f"visionextract_result.{export_format.lower()}", "download_final")
 
                 with export_col2:
                     buf_orig = BytesIO()
@@ -1369,7 +1191,7 @@ def main():
     <div class="footer-professional">
         <h3>OneView</h3>
         <p>Professional AI-Powered Image Processing Solution</p>
-        <p style="font-size: 0.9rem; margin-top: 0.8rem; opacity: 0.8;">Developed by Manusha</p>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">Developed by Manusha</p>
     </div>
     """, unsafe_allow_html=True)
 
